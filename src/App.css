@@ -1,0 +1,108 @@
+.world {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #1a1a1a;
+  color: white;
+}
+.headerBox {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.inputContainer {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.inputValue {
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: rgba(225, 225, 225, 0.2);
+  color: white;
+}
+.inputValue::placeholder {
+  color: #dfdfdf;
+}
+.addInput {
+  padding: 10px;
+  width: 20%;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(225, 225, 225, 0.2);
+  color: white;
+  transition: 1s;
+  cursor: pointer;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+.addInput:hover {
+  background-color: slateblue;
+}
+.bodyContainer {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 10px;
+}
+.bodyContainer::-webkit-scrollbar {
+  display: none;
+}
+#task {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+}
+.taskbox {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: rgba(225, 225, 225, 0.2);
+  border-radius: 5px;
+}
+.doneBut {
+  padding: 5px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  z-index: 1;
+  cursor: pointer;
+}
+.subtaskBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+ion-icon {
+  font-size: 20px;
+}
+
+@media (max-width: 710px) {
+  #task {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 480px) {
+  #task {
+    grid-template-columns: auto;
+  }
+}
