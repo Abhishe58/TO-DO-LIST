@@ -1,4 +1,5 @@
-import { useEffect, useState, ChangeEvent } from "react";
+import { useEffect, useState } from "react";
+import type { ChangeEvent } from "react"; // ✅ type-only import
 import "./App.css";
 
 // Define a Task type
@@ -115,10 +116,10 @@ function App() {
                   {task.done ? "Done" : "Incomplete"}
                 </button>
                 <button onClick={() => editTask(index)} className="doneBut">
-                  <ion-icon name="create-outline"></ion-icon>
+                  Edit
                 </button>
                 <button onClick={() => deleteTask(index)} className="doneBut">
-                  <ion-icon name="close-outline"></ion-icon>
+                  Delete
                 </button>
               </div>
             </div>
