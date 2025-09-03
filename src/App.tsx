@@ -1,12 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, ChangeEvent } from "react";
 import "./App.css";
 
-function App() {
-  const [taskinput, setTaskinput] = useState("");
-  const [tasks, setTasks] = useState([]);
-  const [greeting, setGreeting] = useState("");
+// Define a Task type
+interface Task {
+  text: string;
+  done: boolean;
+}
 
-  const inputText = (e) => {
+function App() {
+  const [taskinput, setTaskinput] = useState<string>("");
+  const [tasks, setTasks] = useState<Task[]>([]);
+  const [greeting, setGreeting] = useState<string>("");
+
+  const inputText = (e: ChangeEvent<HTMLInputElement>) => {
     setTaskinput(e.target.value);
   };
 
@@ -16,18 +22,18 @@ function App() {
     setTaskinput("");
   };
 
-  const toggleDone = (index) => {
+  const toggleDone = (index: number) => {
     const updatedTasks = [...tasks];
     updatedTasks[index].done = !updatedTasks[index].done;
     setTasks(updatedTasks);
   };
 
-  const deleteTask = (index) => {
+  const deleteTask = (index: number) => {
     const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
   };
 
-  const editTask = (index) => {
+  const editTask = (index: number) => {
     const newTask = prompt("Edit your task:", tasks[index].text);
     if (newTask !== null && newTask.trim() !== "") {
       const updatedTasks = [...tasks];
